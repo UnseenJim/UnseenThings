@@ -1,5 +1,5 @@
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: Broadsheet;
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
@@ -7,6 +7,8 @@ body {
   background: #fdfdfd;
   color: #333;
 }
+
+
 
 header, footer {
   text-align: center;
@@ -27,4 +29,23 @@ nav a:hover {
 
 body {
   text-align: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background-color: #222;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0.4em;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+h1 {
+  font-variant: small-caps;
 }
