@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ title }}</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-  <nav>
-    <a href="/">Home</a> |
-    <a href="/about">About</a> |
-    <a href="/falsefaces">False Faces</a> |
-    <a href="/findingfolklore">Finding Folklore</a>
-  </nav>
-  <main>
-    {{ content | safe }}
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/falsefaces/">False Faces</a>
+        <a href="/findingfolklore/">Finding Folklore</a>
+        <a href="/owleschreame/">Owle Schreame</a>
+	<a href="/NFCC/">New Forest Cultural Council</a>
+      </nav>    
+<title>{{ title or "Unseen Things" }}</title>  
+    </header>
+
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <footer>
+      <p>&copy;2025 Unseen Things</p>
+    </footer>
+  </body>
 </html>
- 
