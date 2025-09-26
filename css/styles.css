@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: Broadsheet;
   line-height: 1.6;
@@ -231,6 +235,7 @@ h3 {
   background-color: #000;
   padding: 1rem 2rem;
   color: #fff;
+  position: relative;
 }
 
 .nav-left img {
@@ -238,48 +243,6 @@ h3 {
   width: auto;
 }
 
-.nav-right {
-  display: flex;
-  gap: 2rem;
-}
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.nav-center h3 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #d6d0b5;
-  letter-spacing: 0.5em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 600px) {
-  .top-nav {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    position: static; /* remove absolute positioning context */
-  }
-
-  .nav-left img {
-    max-height: 80px; /* a bit bigger on mobile */
-  }
-
-  .nav-center {
-    position: static;      /* no absolute positioning */
-    transform: none;       /* no offset */
-    margin-top: 0.5rem;
-  }
-
-  .nav-center h3 {
-    font-size: 1.2rem;
-  }
-}
 
 .nav-link {
   color: #fff;
@@ -301,12 +264,46 @@ h3 {
   text-decoration: none;
 }
 
-
-
-
-.top-nav {
-  padding: 2rem 2rem;
+/* Hamburger menu system */
+.nav-toggle {
+  display: none;
 }
+
+.nav-toggle-label {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+/* 📱 Mobile styles */
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .nav-toggle-label {
+    display: block;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex;
+  }
+}
+
 
 
 .button .icon {
