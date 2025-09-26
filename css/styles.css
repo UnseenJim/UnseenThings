@@ -328,9 +328,16 @@ h3 {
 }
 
 .project-card-link {
+  display: block;
   text-decoration: none;  /* remove underline */
   color: inherit;         /* inherit text colour */
   display: block;         /* makes whole link act like a block */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;             /* ensures both row and column spacing */
 }
 
 .project-card {
@@ -366,5 +373,31 @@ h3 {
   height: 200px;
   object-fit: cover;  /* crops nicely to fill card */
   border-radius: 6px;
+}
+
+.project-bigimage {
+  width: 100%;
+  object-fit: cover;  /* crops nicely to fill card */
+  border-radius: 6px;
+}
+
+.simple-card {
+  background-color: #111;        /* dark background */
+  color: #d6d0b5;
+  padding: 1.5rem;
+  border-left: 4px solid #dab400; /* mustard accent */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  text-align: centre;
+  transition: none;              /* no hover effect */
+}
+
+.simple-card h2 {
+  margin-top: 0;
+  color: #dab400;
+}
+
+.simple-card p {
+  font-size: 0.95rem;
 }
 
