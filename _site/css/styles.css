@@ -210,7 +210,7 @@ h3 {
   border-top: 1px solid #333;
   z-index: 999;
   min-width: 220px;   /* set a safe minimum width */
-  text-align: right;   /* keep text aligned neatly inside */
+  text-align: center;   /* keep text aligned neatly inside */
 }
 
 .nav-links li {
