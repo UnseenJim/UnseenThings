@@ -1,10 +1,18 @@
 body {
   font-family: Broadsheet;
   line-height: 1.6;
-  background: #fdfdfd;
+  background: #2f2f38;
   color: #333;
   text-align: center;
   font-size: 20px;
+  margin: 0; /* Ensure no browser default margins */
+  padding: 0;
+}
+
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 
@@ -27,7 +35,7 @@ nav a:hover {
   display: inline-block;
   padding: 0.6em 1.2em;
   background-color: #222;
-  color: white;
+  color: #d6d0b5;
   text-decoration: none;
   border-radius: 5px;
   margin: 0.4em;
@@ -39,19 +47,28 @@ nav a:hover {
 }
 
 h1 {
-  font-family: "Broadsheet", sans-serif;
-  font-weight: 600;
+  font-family: "Broadsheet",
+  font-weight: 500;
   font-style: normal;
   font-variant: small-caps;
-  letter-spacing: 0.05em;
-  color: #900000;
+  letter-spacing: 0.5em;
+  color: #d6d0b5;
 }
 
 h2 {
   font-variant: small-caps;
   letter-spacing: 0.05em;
   font-weight: 500;
-  color: #800000;
+  color: #dab400;
+}
+
+h3 {
+  font-family: "Broadsheet",
+  font-weight: 500;
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.5em;
+  color: #d6d0b5;
 }
 
 .social-icons {
@@ -78,8 +95,8 @@ h2 {
 
 .site-footer {
   width: 100%;
-  background-color: #333;
-  color: #fff;
+  background-color: #000;
+  color: #d6d0b5;
   text-align: center;
   padding: 2em 1em;
   margin-top: 3em;
@@ -93,37 +110,236 @@ h2 {
 }
 
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5em;
-  margin-top: 2em;
+/* Episode cards */
+.episode-card {
+  margin-bottom: 3em;
+  padding: 1.5em;
+  background-color: #000;       /* black background */
+  color: #d6d0b5;                 
+  border-left: 4px solid #900000; /* keep red accent */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  text-align: centre;
+}
+
+/* Titles inside episode cards */
+.episode-card h2 {
+  margin-top: 0;
+  color: #900000; /* red stays */
+}
+
+/* Buttons inside episode cards */
+.episode-card .button {
+  background-color: #d6d0b5;
+  color: #000;
+  border: 1px solid #d6d0b5;
+  font-weight: bold;
+}
+
+.episode-card .button:hover {
+  background-color: #ccc;
+  color: #000;
+  border-color: #ccc;
+}
+
+/* Embedded audio player */
+.episode-card iframe,
+.episode-card audio {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  max-width: 700px;   
+  height: 80px;       /* more compact */
+  border: none;
+}
+
+.home-link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #333;
+  background: #f1f1f1;
+  padding: 0.3em 0.7em;
+  border-radius: 5px;
+  transition: background 0.2s ease;
+  z-index: 10;
+}
+
+.home-link:hover {
+  background: #ddd;
+}
+
+
+.splash-nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem; /* space between buttons */
+  margin: 2rem 0;
+}
+
+.splash-link {
+  display: inline-block;
+  min-width: 300px;   /* set equal width */
+  text-align: center; /* center text inside */
+  padding: 0.6em 0;   /* equal vertical padding */
+  background-color: #000;
+  color: #d6d0b5;
+  text-decoration: none;
+  border: 1px solid transparent; 
+  font-weight: bold;
+  letter-spacing: 0.3em;  
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.splash-link:hover {
+  background-color: #d6d0c4;
+  color: #B28000;
+  border: 1px solid #B28000;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .splash-nav {
+    flex-direction: column;
+    align-items: center; /* center the buttons */
+    gap: 1.5rem; /* reduce spacing when stacked */
+  }
+
+  .splash-link {
+    width: 80%;       /* buttons fill most of the screen width */
+    min-width: unset; /* remove fixed 250px requirement */
+  }
+}
+
+.splash-page main {
+  padding-top: 3em;
+  padding-bottom: 8em;
+}
+
+.splash-page .logo {
+  margin-top: 3em;
+}
+
+/* === Top Navigation === */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+.nav-left img {
+  max-height: 50px;
+  width: auto;
+}
+
+.nav-right {
+  display: flex;
+  gap: 2rem;
+}
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
 }
 
-.project-card {
-  background-color: #f5f5f5;
-  padding: 1.2em;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.project-card .button {
-  display: block;
-  margin: 0 auto 0.5em;
-  font-size: 1em;
-  background-color: #D4A010;
-  font-weight: bold;
-  
-}
-
-.project-card .button:hover {
-  background-color: #600000;
-  
-}
-
-.project-card p {
-  font-size: 0.95em;
-  color: #444;
+.nav-center h3 {
   margin: 0;
+  font-size: 1.5rem;
+  color: #d6d0b5;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
 }
+
+@media (max-width: 600px) {
+  .top-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: static; /* remove absolute positioning context */
+  }
+
+  .nav-left img {
+    max-height: 80px; /* a bit bigger on mobile */
+  }
+
+  .nav-center {
+    position: static;      /* no absolute positioning */
+    transform: none;       /* no offset */
+    margin-top: 0.5rem;
+  }
+
+  .nav-center h3 {
+    font-size: 1.2rem;
+  }
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: #900;         /* dark red for active link */
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+
+
+
+.top-nav {
+  padding: 2rem 2rem;
+}
+
+
+.button .icon {
+  height: 2em;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0em;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: #111;        /* dark card background */
+  color: #d6d0b5;
+  padding: 1.5rem;
+  border-left: 4px solid #dab400; /* mustard yellow accent */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  color: #dab400; /* mustard */
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+}
+

@@ -1,7 +1,7 @@
 body {
   font-family: Broadsheet;
   line-height: 1.6;
-  background: #fdfdfd;
+  background: #2f2f38;
   color: #333;
   text-align: center;
   font-size: 20px;
@@ -35,7 +35,7 @@ nav a:hover {
   display: inline-block;
   padding: 0.6em 1.2em;
   background-color: #222;
-  color: white;
+  color: #d6d0b5;
   text-decoration: none;
   border-radius: 5px;
   margin: 0.4em;
@@ -47,19 +47,28 @@ nav a:hover {
 }
 
 h1 {
-  font-family: "carta-marina", sans-serif;
-  font-weight: 800;
+  font-family: "Broadsheet",
+  font-weight: 500;
   font-style: normal;
   font-variant: small-caps;
-  letter-spacing: 0.05em;
-  color: #900000;
+  letter-spacing: 0.5em;
+  color: #d6d0b5;
 }
 
 h2 {
   font-variant: small-caps;
   letter-spacing: 0.05em;
   font-weight: 500;
-  color: #800000;
+  color: #dab400;
+}
+
+h3 {
+  font-family: "Broadsheet",
+  font-weight: 500;
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.5em;
+  color: #d6d0b5;
 }
 
 .social-icons {
@@ -86,8 +95,8 @@ h2 {
 
 .site-footer {
   width: 100%;
-  background-color: #333;
-  color: #fff;
+  background-color: #000;
+  color: #d6d0b5;
   text-align: center;
   padding: 2em 1em;
   margin-top: 3em;
@@ -106,7 +115,7 @@ h2 {
   margin-bottom: 3em;
   padding: 1.5em;
   background-color: #000;       /* black background */
-  color: #fff;                  /* white text */
+  color: #d6d0b5;                 
   border-left: 4px solid #900000; /* keep red accent */
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   border-radius: 8px;
@@ -121,9 +130,9 @@ h2 {
 
 /* Buttons inside episode cards */
 .episode-card .button {
-  background-color: #fff;
+  background-color: #d6d0b5;
   color: #000;
-  border: 1px solid #fff;
+  border: 1px solid #d6d0b5;
   font-weight: bold;
 }
 
@@ -167,28 +176,42 @@ h2 {
 .splash-nav {
   display: flex;
   justify-content: center;
-  gap: 5rem; 
+  gap: 3rem; /* space between buttons */
   margin: 2rem 0;
 }
 
 .splash-link {
   display: inline-block;
-  padding: 0.3em 4em;
+  min-width: 300px;   /* set equal width */
+  text-align: center; /* center text inside */
+  padding: 0.6em 0;   /* equal vertical padding */
   background-color: #000;
-  color: #fff;
+  color: #d6d0b5;
   text-decoration: none;
   border: 1px solid transparent; 
-  margin: 0 1em;
   font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   letter-spacing: 0.3em;  
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .splash-link:hover {
-  background-color: #fff;
-  color: #800000;
-  border: 1px solid #800000;
+  background-color: #d6d0c4;
+  color: #B28000;
+  border: 1px solid #B28000;
   text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .splash-nav {
+    flex-direction: column;
+    align-items: center; /* center the buttons */
+    gap: 1.5rem; /* reduce spacing when stacked */
+  }
+
+  .splash-link {
+    width: 80%;       /* buttons fill most of the screen width */
+    min-width: unset; /* remove fixed 250px requirement */
+  }
 }
 
 .splash-page main {
@@ -218,6 +241,44 @@ h2 {
 .nav-right {
   display: flex;
   gap: 2rem;
+}
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.nav-center h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #d6d0b5;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .top-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: static; /* remove absolute positioning context */
+  }
+
+  .nav-left img {
+    max-height: 80px; /* a bit bigger on mobile */
+  }
+
+  .nav-center {
+    position: static;      /* no absolute positioning */
+    transform: none;       /* no offset */
+    margin-top: 0.5rem;
+  }
+
+  .nav-center h3 {
+    font-size: 1.2rem;
+  }
 }
 
 .nav-link {
@@ -255,4 +316,30 @@ h2 {
   margin-right: 0em;
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: #111;        /* dark card background */
+  color: #d6d0b5;
+  padding: 1.5rem;
+  border-left: 4px solid #dab400; /* mustard yellow accent */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  color: #dab400; /* mustard */
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+}
 
