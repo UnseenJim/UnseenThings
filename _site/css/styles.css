@@ -163,8 +163,11 @@ h3 {
   font-weight: 600;
   font-style: normal;
   font-variant: small-caps;
-  letter-spacing: 0.5em;
-  font-size: 2rem;
+  text-indent: 0;           /* remove first-line indent */
+  letter-spacing: 0.3em;    /* reduce spacing so breaks look less jarring */
+  display: inline-block;    /* keeps it centered properly */
+  text-align: center;
+  font-size: 1.5rem;
   color: #d6d0b5;
   font-style: normal;
   text-decoration: none; /* ✅ remove underline */
