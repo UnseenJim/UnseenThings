@@ -6,19 +6,53 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="https://use.typekit.net/acb1lax.css">
   </head>
-  <body class="{{ bodyClass | default('') }}">
+<body class="{{ bodyClass | default('') }}">
 {% if not splash %}
-<nav class="top-nav">
-  <div class="nav-left">
-    <a href="/"><img src="/images/UnseenThingsLogo.png" alt="Logo" width="200" height="200" /></a>
-  </div>
-
-  <div class="nav-center">
-    <h3>unseen things</h3>
-  </div>
-</nav>
-
+  <nav class="top-nav">
+    <div class="nav-left">
+      <a href="/"><img src="/images/UnseenThingsLogo.png" alt="Logo" width="200" height="200" /></a>
+    </div>
+    <div class="nav-center">
+      <a href="/" class="home-link">Unseen Things</a>
+    </div>
+    <div class="nav-right">
+      <div class="dropdown-nav">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label">☰ Menu</label>
+        <ul class="nav-links">
+          {% if page.url != '/' %}
+            <li><a href="/">Home</a></li>
+          {% endif %}
+          {% if page.url != '/findingfolklore/' %}
+            <li><a href="/findingfolklore">Finding Folklore</a></li>
+          {% endif %}
+          {% if page.url != '/falsefaces/' %}
+            <li><a href="/falsefaces">False Faces</a></li>
+          {% endif %}
+          {% if page.url != '/clownlab/' %}
+            <li><a href="/clownlab">New Forest Clown Lab</a></li>
+          {% endif %}
+          {% if page.url != '/punchandjudy/' %}
+            <li><a href="/punchandjudy">Punch &amp; Judy</a></li>
+          {% endif %}
+          {% if page.url != '/owleschreame/' %}
+            <li><a href="/owleschreame">The Owle Schreame Theatre Company</a></li>
+          {% endif %}
+          {% if page.url != '/unseenhour/' %}
+            <li><a href="/unseenhour">The Unseen Hour</a></li>
+          {% endif %}
+          {% if page.url != '/carney/' %}
+            <li><a href="/carney">James Carney</a></li>
+          {% endif %}
+          {% if page.url != '/contact/' %}
+            <li><a href="/contact">Contact</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
 {% endif %}
+
   <div class="content-wrapper">
     <main>
       {{ content | safe }}
