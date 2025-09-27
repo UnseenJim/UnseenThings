@@ -1,6 +1,9 @@
 In cmd:
 
-To get the right file: cd C:\Users\jimmy\Documents\Websites\unseenthings-site
+To get the right file: 
+cd C:\Users\jimmy\Documents\Websites\unseenthings-site
+cd C:\Users\jimmy\Documents\Websites\findingfolklore-site
+cd C:\Users\jimmy\Documents\Websites\falsefaces-site
 To run eleventy: npx eleventy
 
 
@@ -23,3 +26,5 @@ npm init -y
 npm install @11ty/eleventy --save-dev
 npx eleventy --version
 
+Check where the folder is pushing to:
+git remote -v

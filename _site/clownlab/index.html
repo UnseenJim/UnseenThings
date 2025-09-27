@@ -24,14 +24,14 @@
             <li><a href="/">Home</a></li>
           
           
-            <li><a href="/findingfolklore">Finding Folklore</a></li>
+            <li><a href="http://www.findingfolklore.org">Finding Folklore</a></li>
           
           
-            <li><a href="/falsefaces">False Faces</a></li>
+            <li><a href="http://www.falsefaces.co.uk">False Faces</a></li>
           
           
           
-            <li><a href="/punchandjudy">Punch &amp; Judy</a></li>
+            <li><a href="http://www.falsefaces.co.uk/punchandjudy">Punch &amp; Judy</a></li>
           
           
             <li><a href="/owleschreame">The Owle Schreame Theatre Company</a></li>
@@ -74,5 +74,39 @@
       <p>Unseen Things, Lyndhurst, England, United Kingdom</p>
       <p>&copy;2025 Unseen Things</p>
     </footer>
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.querySelector(".lightbox-img");
+  const lightboxCaption = document.querySelector(".lightbox-caption");
+  const closeBtn = document.querySelector(".lightbox .close");
+
+  document.querySelectorAll(".gallery-item img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.innerHTML = `<h3>${img.dataset.title}</h3><p>${img.dataset.description}</p>`;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  // Close on background click
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+
+  // Close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      lightbox.style.display = "none";
+    }
+  });
+</script>
+
   </body>
 </html>

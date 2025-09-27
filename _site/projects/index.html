@@ -24,16 +24,16 @@
             <li><a href="/">Home</a></li>
           
           
-            <li><a href="/findingfolklore">Finding Folklore</a></li>
+            <li><a href="http://www.findingfolklore.org">Finding Folklore</a></li>
           
           
-            <li><a href="/falsefaces">False Faces</a></li>
+            <li><a href="http://www.falsefaces.co.uk">False Faces</a></li>
           
           
             <li><a href="/clownlab">New Forest Clown Lab</a></li>
           
           
-            <li><a href="/punchandjudy">Punch &amp; Judy</a></li>
+            <li><a href="http://www.falsefaces.co.uk/punchandjudy">Punch &amp; Judy</a></li>
           
           
             <li><a href="/owleschreame">The Owle Schreame Theatre Company</a></li>
@@ -67,8 +67,8 @@
 
   <div class="simple-card">
     <h2>False Faces</h2>
-    <p>Experimental masks and performances that explore the grotesque, playful, and folkloric.</p>
-    <a class="button" href="/falsefaces">Explore False Faces</a>
+    <p>Artisanal Theatrical and Folk Masks from the New Forest</p>
+    <a class="button" href="http://www.falsefaces.co.uk">Explore False Faces</a>
   </div>
 
   <div class="simple-card">
@@ -79,20 +79,20 @@
 
   <div class="simple-card">
     <h2>Punch &amp; Judy</h2>
-    <p>Traditional glove puppetry with a contemporary twist, rooted in history and craft.</p>
-    <a class="button" href="/punchandjudy">See Punch &amp; Judy</a>
+    <p>Traditional English glove puppetry.</p>
+    <a class="button" href="http://www.falsefaces.co.uk/punchandjudy">See Punch &amp; Judy</a>
   </div>
 
   <div class="simple-card">
     <h2>The Owle Schreame Theatre Company</h2>
-    <p>Radical historical theatre company reviving long-lost plays and performance practices.</p>
-    <a class="button" href="/owleschreame">Visit Owle Schreame</a>
+    <p>Rough historical theatre company reviving long-lost plays and performance practices.</p>
+    <a class="button" href="/owleschreame">Coming Soon</a>
   </div>
 
   <div class="simple-card">
     <h2>The Unseen Hour</h2>
     <p>A darkly comic cult podcast blending horror, satire, and the absurd.</p>
-    <a class="button" href="/unseenhour">Listen to The Unseen Hour</a>
+    <a class="button" href="/unseenhour">Coming Soon</a>
   </div>
 
 </section>
@@ -112,5 +112,39 @@
       <p>Unseen Things, Lyndhurst, England, United Kingdom</p>
       <p>&copy;2025 Unseen Things</p>
     </footer>
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.querySelector(".lightbox-img");
+  const lightboxCaption = document.querySelector(".lightbox-caption");
+  const closeBtn = document.querySelector(".lightbox .close");
+
+  document.querySelectorAll(".gallery-item img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.innerHTML = `<h3>${img.dataset.title}</h3><p>${img.dataset.description}</p>`;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  // Close on background click
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+
+  // Close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      lightbox.style.display = "none";
+    }
+  });
+</script>
+
   </body>
 </html>
