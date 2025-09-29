@@ -13,6 +13,11 @@ body {
   padding: 0;
 }
 
+body.clownlab {
+  font-family: "Amboy", sans-serif;  /* assuming Amboy is loaded via Typekit or similar */
+}
+
+
 .content-wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -473,5 +478,30 @@ h3 {
 
 .simple-card p {
   font-size: 0.95rem;
+}
+
+/* Links inside body text */
+.content-wrapper a {
+  color: #dab400;          /* mustard yellow (or another accent) */
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.content-wrapper a:hover {
+  color: #fff;             /* or lighten to make hover obvious */
+  text-decoration: none;
+}
+
+.clownlab ul {
+  list-style: none;
+  padding: 0;
+}
+
+.clownlab ul li {
+  background: #111;
+  margin: 0.5em 0;
+  padding: 0.6em 1em;
+  border-left: 4px solid #dab400;
+  border-radius: 4px;
 }
 
