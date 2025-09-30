@@ -14,7 +14,8 @@ body {
 }
 
 body.clownlab {
-  font-family: "Amboy", sans-serif;  /* assuming Amboy is loaded via Typekit or similar */
+  font-family: "Amboy-black", sans-serif;
+  font-weight: 100;  
 }
 
 
