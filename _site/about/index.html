@@ -1,5 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/acb1lax.css">
+<!-- Favicon (modern SVG + PNG fallbacks) -->
+<link rel="icon" type="image/svg+xml" href="/images/Logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/Logo32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/Logo16.png">
+
+<!-- iOS home screen -->
+<link rel="apple-touch-icon" href="/images/Logo180.png">
+
+  </head>
+<body class="">
+
+  <nav class="top-nav">
+    <div class="nav-left">
+      <a href="/"><img src="/images/UnseenThingsLogo.png" alt="Logo" width="200" height="200" /></a>
+    </div>
+    <div class="nav-center">
+      <a href="/" class="home-link">unseen things</a>
+    </div>
+    <div class="nav-right">
+      <div class="dropdown-nav">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label">☰ Menu</label>
+        <ul class="nav-links">
+          
+            <li><a href="/">Home</a></li>
+          
+          
+            <li><a href="http://www.findingfolklore.org">Finding Folklore</a></li>
+          
+          
+            <li><a href="http://www.falsefaces.co.uk">False Faces</a></li>
+          
+          
+            <li><a href="/clownlab">New Forest Clown Lab</a></li>
+          
+          
+            <li><a href="http://www.falsefaces.co.uk/punchandjudy">Punch &amp; Judy</a></li>
+          
+          
+            <li><a href="/owleschreame">The Owle Schreame Theatre Company</a></li>
+          
+          
+            <li><a href="/unseenhour">The Unseen Hour</a></li>
+          
+          
+            <li><a href="/carney">James Carney</a></li>
+          
+          
+            <li><a href="/contact">Contact</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
-<h1>About James</h1>
-<p>Mask-maker, performer etc.</p>
+  <div class="content-wrapper">
+    <main>
+      
+<h1>About Unseen Things</h1>
+
+<p>Unseen Things was created following the success of the hybrid theatre show and podcast <a href="/unseenhour">The Unseen Hour</a> in 2017. The Unseen Hour was a horror comedy audio-drama with two new scripts every month - three actors playing nine characters and performing foley sound effects live on stage.</p>
+
+<a class="button" href="/unseenhour">The Unseen Hour</a>
+
+<p>Since then, projects led by writer-director James Carney have ranged from theatre to short films to puppetry to traditional craft and sculpture. Unseen Things is the banner under which all these projects are produced.</p>
+
+<p>I worked as an actor in London for over a decade and have held a range of production roles in television, theatre, film, and audio alongside developing my own projects. I trained in physical theatre at the École Jacques Lecoq in Paris and now live in the New Forest, where I continue to develop a wide array of solo and collaborative work.</p>
+<a class="button" href="/projects">Projects</a>
+
+<p>The New Forest is critical to the recent work listed here. My work is tied to the region, the people and the heritage of South West England, and that landscape where I now live. I also revived my collaboration with New Forest local Brice Stratford, fellow actor in <a href="/unseenhour">The Unseen Hour</a> and Artistic Director of <a href="/owleschreame">The Owle Schreame</a>.
+
+<p>After studying at Lecoq, I spent time in Italy learning traditional mask-making and have since developed my own practice as a maker. This has grown into an ongoing craft, and you can see the masks themselves at False Faces. False Faces is seeking to connect with local regional culture and heritage as well as the international tradition. With False Faces I am a member of the New Forest Marque - an organisation which supports local produce and arts.</p>
+<a class="button" href="http://www.falsefaces.co.uk">False Faces</a>
+
+<section class="projects-grid">
+
+
+
+
  
+</section>
+
+    </main>
+</div>
+    
+      <div class="social-icons">
+                <a href="http://www.instagram.com/ofunseenthings" target="_blank" aria-label="Instagram">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="https://www.youtube.com/@ofunseenthings" target="_blank" aria-label="YouTube">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" />
+        </a>
+      </div>
+<footer class="site-footer">
+      <p>Unseen Things, Lyndhurst, England, United Kingdom</p>
+      <p>&copy;2025 Unseen Things</p>
+    </footer>
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.querySelector(".lightbox-img");
+  const lightboxCaption = document.querySelector(".lightbox-caption");
+  const closeBtn = document.querySelector(".lightbox .close");
+
+  document.querySelectorAll(".gallery-item img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.innerHTML = `<h3>${img.dataset.title}</h3><p>${img.dataset.description}</p>`;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  // Close on background click
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+
+  // Close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      lightbox.style.display = "none";
+    }
+  });
+</script>
+
+  </body>
+</html>
