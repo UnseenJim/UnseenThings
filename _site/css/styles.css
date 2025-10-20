@@ -859,6 +859,56 @@ h3 {
   font-size: 0.95rem;
 }
 
+/* === Hover image reveal for .simple-card === */
+.simple-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #111;
+  color: #d6d0b5;
+  padding: 1.5rem;
+  border-left: 4px solid #dab400;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* invisible background layer */
+.simple-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--card-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: brightness(40%) blur(1px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 0;
+}
+
+/* keep text above the background image */
+.simple-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* reveal only when the button is hovered (not whole card) */
+.simple-card:has(.button:hover)::before {
+  opacity: 0.8;           /* faint reveal */
+  transform: scale(1.05);
+}
+
+
+
+/* optional: small lift on hover */
+.simple-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5),
+              0 0 12px rgba(218,180,0,0.3);
+}
+
+
 /* Links inside body text */
 .content-wrapper a {
   color: #dab400;          /* mustard yellow (or another accent) */
