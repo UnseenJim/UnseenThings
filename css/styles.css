@@ -383,7 +383,13 @@ h3 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   transition: none;
 }
-
+.gallery-item {
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
 .gallery-item-static:hover {
   transform: none;
@@ -392,10 +398,136 @@ h3 {
 
 .gallery-item-static img {
   width: 100%;
-  height: 300px;
+  height: 250px;
   object-fit: cover;
   display: block;
 }
+
+.text-image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.text-image .text {
+  flex: 2;
+}
+
+.text-image .image {
+  flex: 1;
+}
+
+.text-image img {
+  width: 100%;
+  max-height: 200px;
+  max-width: 300px;
+  object-fit: cover;  
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+/* Alternate layout for reversed sections */
+.text-image.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 800px) {
+  .text-image {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-image.reverse {
+    flex-direction: column;
+  }
+
+  .text-image .text,
+  .text-image .image {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+/* === Hover overlay link for images === */
+.hover-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.hover-link img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.hover-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(218,180,0,0.3) 0%, rgba(0,0,0,0.7) 80%);
+  opacity: 0;
+  transition: opacity 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.hover-link h1 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dab400;
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  font-variant: small-caps;
+  opacity: 0;
+  text-shadow: 0 0 20px rgba(0,0,0,0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: scale(1.05);
+  text-align: center;
+  pointer-events: none;  /* prevents accidental blocking of link click */
+}
+
+.hover-link a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+/* Hover effect */
+.hover-link:hover img {
+  filter: brightness(60%);
+  transform: scale(1.05);
+}
+
+.hover-link:hover::after {
+  opacity: 1;
+  box-shadow: 0 0 40px rgba(218,180,0,0.4);
+}
+
+.hover-link:hover h1 {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* optional: smoother smaller-screen text */
+@media (max-width: 700px) {
+  .hover-link h1 {
+    font-size: 1.5rem;
+  }
+}
+
 
 
 /* Embedded audio player */
